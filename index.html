@@ -78,7 +78,7 @@
             align-items: center;
             padding-top: 80px;
             background: linear-gradient(135deg, #343a40 0%, #343a40 100%);
-            
+            position: relative;
         }
 
         .hero-content {
@@ -548,7 +548,48 @@
                 margin-left: 0;
             }
         }
+            .scroll-down {
+                position: absolute;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                
+                width: 50px;
+                height: 50px;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                background-color: #000000;
+                color: #D2A1B8;
+                border: 2px solid #D2A1B8;
+                border-radius: 50%;
+                
+                text-decoration: none;
+                font-size: 20px;
+                
+                transition: all 0.3s ease;
+                
+                animation: scrollBounce 2s infinite;
+            }
+
+            .scroll-down:hover {
+                background-color: #D2A1B8;
+                color: #000000;
+                transform: translateX(-50%) translateY(-3px);
+                box-shadow: 0 5px 15px rgba(210, 161, 184, 0.4);
+            }
+
+            @keyframes scrollBounce {
+                0%, 100% {
+                    transform: translateX(-50%) translateY(0);
+                }
             
+                50% {
+                    transform: translateX(-50%) translateY(7px);
+                }
+            }  
     </style>
 </head>
 <body>
@@ -583,7 +624,8 @@
                 </div>
                 
             </div>
-               
+              <a href="#sobre-mi" class="scroll-down" aria-label="Continuar hacia abajo">
+            <i class="fas fa-chevron-down"></i> 
             
         </div>
     </section>
@@ -615,6 +657,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </section>
 
