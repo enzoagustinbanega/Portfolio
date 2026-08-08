@@ -590,6 +590,235 @@
                     transform: translateX(-50%) translateY(7px);
                 }
             }  
+
+
+/* References Section */
+            .references {
+                padding: 100px 0;
+                background-color: #343a40;
+            }
+            
+            .references-carousel {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                max-width: 900px;
+                margin: 50px auto 0;
+            }
+            
+            .references-track {
+                position: relative;
+                width: 100%;
+                min-height: 380px;
+            }
+            
+            .reference-card {
+                position: absolute;
+                width: 100%;
+                left: 0;
+                top: 0;
+            
+                display: flex;
+                align-items: center;
+                gap: 50px;
+            
+                padding: 45px;
+            
+                background-color: #000000;
+                border-radius: 20px;
+            
+                opacity: 0;
+                transform: translateX(40px);
+            
+                pointer-events: none;
+            
+                transition:
+                    opacity 0.5s ease,
+                    transform 0.5s ease;
+            }
+            
+            .reference-card.active {
+                opacity: 1;
+                transform: translateX(0);
+                pointer-events: auto;
+            }
+            
+            .reference-photo {
+                flex-shrink: 0;
+            }
+            
+            .reference-photo img {
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+            
+                border-radius: 50%;
+            
+                border: 3px solid #D2A1B8;
+            
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            }
+            
+            .reference-content {
+                flex: 1;
+            }
+            
+            .reference-text {
+                color: #ffffff;
+                font-size: 17px;
+                line-height: 1.7;
+            
+                font-style: italic;
+            
+                margin-bottom: 25px;
+            }
+            
+            .reference-content h3 {
+                color: #D2A1B8;
+                font-size: 22px;
+                margin-bottom: 5px;
+            }
+            
+            .reference-role {
+                display: block;
+            
+                color: #adb5bd;
+            
+                font-size: 14px;
+            
+                margin-bottom: 20px;
+            }
+            
+            .linkedin-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+            
+                padding: 9px 18px;
+            
+                border: 2px solid #D2A1B8;
+                border-radius: 25px;
+            
+                color: #D2A1B8;
+                text-decoration: none;
+            
+                font-size: 14px;
+                font-weight: 500;
+            
+                transition: all 0.3s ease;
+            }
+            
+            .linkedin-btn:hover {
+                background-color: #D2A1B8;
+                color: #000000;
+                transform: translateY(-2px);
+            }
+            
+            .carousel-btn {
+                position: absolute;
+                z-index: 10;
+            
+                width: 45px;
+                height: 45px;
+            
+                border-radius: 50%;
+            
+                border: 2px solid #D2A1B8;
+            
+                background-color: #000000;
+                color: #D2A1B8;
+            
+                cursor: pointer;
+            
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            
+                transition: all 0.3s ease;
+            }
+            
+            .carousel-btn:hover {
+                background-color: #D2A1B8;
+                color: #000000;
+            }
+            
+            .carousel-btn.prev {
+                left: -65px;
+            }
+            
+            .carousel-btn.next {
+                right: -65px;
+            }
+            
+            .carousel-dots {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+            
+                margin-top: 30px;
+            }
+            
+            .dot {
+                width: 10px;
+                height: 10px;
+            
+                padding: 0;
+            
+                border: none;
+                border-radius: 50%;
+            
+                background-color: #6c757d;
+            
+                cursor: pointer;
+            
+                transition: all 0.3s ease;
+            }
+            
+            .dot.active {
+                background-color: #D2A1B8;
+                transform: scale(1.3);
+            }
+            
+            /* Responsive */
+            @media (max-width: 768px) {
+            
+                .references-carousel {
+                    padding: 0 10px;
+                }
+            
+                .references-track {
+                    min-height: 500px;
+                }
+            
+                .reference-card {
+                    flex-direction: column;
+                    text-align: center;
+            
+                    gap: 25px;
+            
+                    padding: 35px 25px;
+                }
+            
+                .reference-photo img {
+                    width: 120px;
+                    height: 120px;
+                }
+            
+                .reference-text {
+                    font-size: 15px;
+                }
+            
+                .carousel-btn.prev {
+                    left: -5px;
+                }
+            
+                .carousel-btn.next {
+                    right: -5px;
+                }
+            }
+
+        
     </style>
 </head>
 <body>
@@ -794,23 +1023,132 @@
         </div>
     </section>
 
-    <!--Latest Projects Section -->
-    <!--Latest Projects Section -->
-    <section class="about" id="ultimos">
-        <div class="container">
-            <div class="section-title">
-                <h2>Últimos Proyectos</h2>
-                <p>Mis últimos trabajos</p>
-            </div>
-            <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
-             padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
-             border-radius: 8px; will-change: transform;">
-                  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-                        src="https://www.canva.com/design/DAHRoonrqRU/1q_wmkI9Z4DdtqDRdXpvrw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-                  </iframe>
-            </div>
+    <!-- References Section -->
+<section class="references" id="referencias">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Referencias</h2>
+            <p>Lo que otros profesionales dicen sobre trabajar conmigo</p>
         </div>
-    </section>
+
+        <div class="references-carousel">
+
+            <button class="carousel-btn prev" aria-label="Referencia anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="references-track">
+
+                <!-- Referencia 1 -->
+                <div class="reference-card active">
+
+                    <div class="reference-photo">
+                        <img src="referencia1.jpg" alt="Nombre Apellido">
+                    </div>
+
+                    <div class="reference-content">
+
+                        <p class="reference-text">
+                            "Acá va la reseña o recomendación que haya
+                            escrito la persona sobre tu trabajo."
+                        </p>
+
+                        <h3>Nombre Apellido</h3>
+
+                        <span class="reference-role">
+                            Cargo · Empresa
+                        </span>
+
+                        <a href="LINKEDIN_DE_LA_PERSONA"
+                           target="_blank"
+                           class="linkedin-btn">
+                            <i class="fab fa-linkedin-in"></i>
+                            Ver LinkedIn
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Referencia 2 -->
+                <div class="reference-card">
+
+                    <div class="reference-photo">
+                        <img src="referencia2.jpg" alt="Nombre Apellido">
+                    </div>
+
+                    <div class="reference-content">
+
+                        <p class="reference-text">
+                            "Segunda recomendación profesional."
+                        </p>
+
+                        <h3>Nombre Apellido</h3>
+
+                        <span class="reference-role">
+                            Cargo · Empresa
+                        </span>
+
+                        <a href="LINKEDIN_DE_LA_PERSONA"
+                           target="_blank"
+                           class="linkedin-btn">
+                            <i class="fab fa-linkedin-in"></i>
+                            Ver LinkedIn
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Referencia 3 -->
+                <div class="reference-card">
+
+                    <div class="reference-photo">
+                        <img src="referencia3.jpg" alt="Nombre Apellido">
+                    </div>
+
+                    <div class="reference-content">
+
+                        <p class="reference-text">
+                            "Tercera recomendación profesional."
+                        </p>
+
+                        <h3>Nombre Apellido</h3>
+
+                        <span class="reference-role">
+                            Cargo · Empresa
+                        </span>
+
+                        <a href="LINKEDIN_DE_LA_PERSONA"
+                           target="_blank"
+                           class="linkedin-btn">
+                            <i class="fab fa-linkedin-in"></i>
+                            Ver LinkedIn
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button class="carousel-btn next" aria-label="Siguiente referencia">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+        </div>
+
+        <div class="carousel-dots">
+            <button class="dot active" aria-label="Referencia 1"></button>
+            <button class="dot" aria-label="Referencia 2"></button>
+            <button class="dot" aria-label="Referencia 3"></button>
+        </div>
+
+    </div>
+</section>
 
 
 <section class="projects" id="logros">
@@ -1037,22 +1375,7 @@
             });
         });
 
-        // Form submission
-        const form = document.querySelector('form');
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            if(name && email && subject && message) {
-                alert('Gracias por tu mensaje, ' + name + '! Me pondré en contacto contigo pronto.');
-                form.reset();
-            } else {
-                alert('Por favor, completa todos los campos.');
-            }
-        });
+        
 
         // Animation on scroll
         const observerOptions = {
