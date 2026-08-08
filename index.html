@@ -1397,6 +1397,60 @@
             el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(el);
         });
+        const referenceCards = document.querySelectorAll('.reference-card');
+const dots = document.querySelectorAll('.dot');
+
+const prevButton = document.querySelector('.carousel-btn.prev');
+const nextButton = document.querySelector('.carousel-btn.next');
+
+let currentReference = 0;
+
+function showReference(index) {
+
+    referenceCards.forEach(card => {
+        card.classList.remove('active');
+    });
+
+    dots.forEach(dot => {
+        dot.classList.remove('active');
+    });
+
+    referenceCards[index].classList.add('active');
+    dots[index].classList.add('active');
+
+    currentReference = index;
+}
+
+nextButton.addEventListener('click', () => {
+
+    let nextIndex = currentReference + 1;
+
+    if (nextIndex >= referenceCards.length) {
+        nextIndex = 0;
+    }
+
+    showReference(nextIndex);
+});
+
+prevButton.addEventListener('click', () => {
+
+    let previousIndex = currentReference - 1;
+
+    if (previousIndex < 0) {
+        previousIndex = referenceCards.length - 1;
+    }
+
+    showReference(previousIndex);
+});
+
+
+dots.forEach((dot, index) => {
+
+    dot.addEventListener('click', () => {
+        showReference(index);
+    });
+
+});
     </script>
 </body>
 </html>
